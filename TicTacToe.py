@@ -6,7 +6,6 @@ from random import randrange
 from constantes import LOGO_ICON, PORTADA_PNG
 
 
-
 class UsersError (Exception):
     def __init__(self, Name, mensaje):
         Exception.__init__(self, mensaje)
@@ -317,6 +316,7 @@ class Tic_Tac:
             if self.victoria ():
                 self.mensaje_tablero.config (text=f"Gana {self.jugador_solo.get ()}", foreground="blue")
                 self.finaliza = True
+                return
                 
             elif self.Num_veces == 9 and self.victoria () is False:
                 self.mensaje_tablero.config (text="Juego empatado", foreground="green")
